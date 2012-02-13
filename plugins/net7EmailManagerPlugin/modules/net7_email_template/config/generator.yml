@@ -10,7 +10,7 @@ generator:
     route_prefix:          net7_email_template
     with_doctrine_route:   true
     actions_base_class:    sfActions
-
+    css: false
     config:
       actions: ~
       fields:  ~
