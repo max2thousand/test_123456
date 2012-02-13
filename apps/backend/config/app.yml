@@ -11,7 +11,7 @@ all:
     image_dir: /sfAdminDashPlugin/images/icons/
     default_image: config.png
     resize_mode: thumbnail
-    site: Prenatal
+    site: GameNotifier
     include_path: '0'
     include_jquery_no_conflict: ''
     categories:
@@ -37,7 +37,7 @@ all:
         items:  
           SuperenalottoBet:
             url: superenalotto_bet
-          SuperenalottoWIns:
+          SuperenalottoWins:
             url: superenalotto_win
             
         
