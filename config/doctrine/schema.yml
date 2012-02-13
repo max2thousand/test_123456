@@ -1,0 +1,130 @@
+#############################
+############ User info ######
+#############################
+SfGuardUserProfile:
+  columns:
+    user_id:          { type: integer, notnull: true }
+    first_name:       { type: string(30) }
+    last_name:        { type: string(30) }
+    facebook_uid:     { type: string(20) }
+    # VERIFICARE SE è necessario lasciarlo
+    email:            { type: string(255) }
+  indexes:
+    facebook_uid_index:
+      fields: [facebook_uid]
+      unique: true
+    email_index:
+      fields: [email]
+      unique: true
+  relations:
+    sfGuardUser:
+      type: one
+      foreignType: one
+      class: sfGuardUser
+      local: user_id
+      foreign: id
+      onDelete: cascade
+      foreignAlias: Profile  
+
+
+GameConfiguration:
+  actAs:
+    Timestampable: ~
+    
+  columns:
+    title: string(255)
+    class_to_use: string(255)
+    configurations_steps: clob
+    
+Game:
+  actAs:
+    Timestampable: ~
+  columns:
+    game_configuration_id: integer
+    title: string(255)
+    scheduled_time: string(255)
+  relations:
+    GameConfiguration:
+      local: game_configuration_id
+      foreign: id
+      foreignAlias: Games
+      class:  GameConfiguration
+      
+      
+      
+  ###########################
+  ### SUPERENALOTTO BET   ###
+  ###########################
+      
+SuperenalottoBet:
+  actAs:
+    Timestampable: ~
+    Signable:      ~ 
+  columns: 
+    numbers_played: string(255)
+    superstar: integer
+    contest_id: string(255) # identificativo del concorso
+    game_id: integer
+  relations:
+    Game:
+      class: Game
+      foreign: id
+      local: game_id
+      foreignAlias: SuperenalottoBets
+      
+      
+SuperenalottoWin:
+  columns:
+    numbers_played: string(255)
+    contest_id: string(255) # identificativo del concorso
+    superstar: integer
+    game_id: integer
+    user_id: integer
+  relations:
+    User:
+      class: sfGuardUser
+      local: user_id
+      foreign: id
+      foreignAlias: SuperenalottoWins 
+    Game:
+      class: Game
+      foreign: id
+      local: game_id
+      foreignAlias: SuperenalottoWins
+      
+  
+
+
+################################
+###### STATISTICS ##############
+###############################
+
+
+UserStatistic:
+  columns:
+    num_bets: integer
+    num_accesses: integer
+    num_wins: integer
+    user_id: integer
+  relations: 
+    User:
+      class: sfGuardUser
+      local: user_id
+      foreign: id
+      foreignAlias: UserStatistics 
+
+#####################################
+##### banner configuration###########
+#####################################      
+                  
+BannerConfiguration:
+  columns:
+    page_routing: string(255)
+    banner_text: clob
+    is_default: boolean
+    
+    position:
+      type: enum
+      values: [top, bottom, left, right]
+    
+                            

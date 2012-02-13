@@ -1,0 +1,12 @@
+net7_email_template:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                net7EmailTemplate
+    module:               net7_email_template
+    prefix_path:          /net7_email_template
+    column:               id
+    with_wildcard_routes: true
+
+net7_send_test_email:
+  url:   /nf_email_test_email
+  param: { module: net7_email_template, action: sendTestEmail }

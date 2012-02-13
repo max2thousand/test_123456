@@ -1,0 +1,9 @@
+<?php include_partial('advanced_generator_plugin_utilities/relation_item_list', array('itemsToShow' => $itemsToShow, 
+																					  'mainField' => $mainField,
+																					  'relationClass' => $relationClass,
+ 																					  'outboundRelationClassAlias' => $outboundRelationClassAlias,
+ 																					  'outboundRelationClass' => $outboundRelationClass,
+ 																					  'outboundRelationId' => $outboundRelationId,
+ 																					  'objId' => $objId,
+																					  'relationId' => $relationId,
+																					  'editRoute' => $editRoute ))?>

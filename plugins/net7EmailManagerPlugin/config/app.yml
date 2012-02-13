@@ -1,0 +1,11 @@
+all:
+  mail_manager:
+    mailer: 
+      encryption:           tls
+      port:                 465 
+      host:                 smtp.gmail.com
+      username:             server@netseven.it
+      password:             net7notification
+      from_address:         registration@netseven.it
+      from_name:            TEST Application
+      use_exim_transport:   true

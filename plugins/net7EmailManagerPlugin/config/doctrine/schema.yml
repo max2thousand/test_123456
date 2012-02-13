@@ -1,0 +1,13 @@
+net7EmailTemplate:
+  columns: 
+    name:     
+      type:         string(255)
+      unique:       true
+    email_subject:  string(255)
+    email_body:     clob
+    email_from:     string(255)
+  actAs:
+     Timestampable: ~
+     I18n:
+       fields: [email_subject, email_body, email_from]
+  

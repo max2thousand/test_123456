@@ -8,5 +8,11 @@ class ProjectConfiguration extends sfProjectConfiguration
   public function setup()
   {
     $this->enablePlugins('sfDoctrinePlugin');
+    $this->enablePlugins('net7AdvancedGeneratorPlugin');
+    $this->enablePlugins('net7EmailManagerPlugin');
+    $this->enablePlugins('sfDoctrineActAsSignablePlugin');
+    $this->enablePlugins('sfDoctrineGuardPlugin');
+    $this->enablePlugins('sfJqueryReloadedPlugin');
+    $this->enablePlugins('sfAdminDashPlugin');
   }
 }

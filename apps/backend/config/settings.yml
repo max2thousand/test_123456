@@ -33,3 +33,17 @@ all:
 
     # Enable the database manager
     use_database:           true
+
+    enabled_modules:
+      - sfAdminDash
+      - sfGuardAuth
+      - sfGuardUser
+      - sfGuardGroup
+      - sfGuardPermission
+      - advanced_generator_plugin_utilities
+      - net7_email_template
+  .actions:
+    login_module: sfGuardAuth
+    login_action: signin
+    secure_module: sfGuardAuth
+    secure_action: secure

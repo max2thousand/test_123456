@@ -1,0 +1,49 @@
+net7_advanced_generator_autocomplete_ajax_call:
+  url:   /net7_advanced_generator_autocomplete_ajax_call
+  param: { module: advanced_generator_plugin_utilities, action: ajaxAutocomplete }
+
+net7_advanced_generator_save_relation_item:
+  url:   /net7_advanced_generator_save_relation_item
+  param: { module: advanced_generator_plugin_utilities, action: createRelationItem }
+
+net7_advanced_generator_save_nn_relation_item:
+  url:   /net7_advanced_generator_save_nn_relation_item
+  param: { module: advanced_generator_plugin_utilities, action: createNNRelationItem }
+
+net7_advanced_generator_delete_relation_item:
+  url:   /net7_advanced_generator_delete_relation_item
+  param: { module: advanced_generator_plugin_utilities, action: deleteRelationItem }
+
+net7_advanced_generator_save_associated_items:
+  url:   /net7_advanced_generator_save_associated_items
+  param: { module: advanced_generator_plugin_utilities, action: saveAssociatedItems }
+
+net7_advanced_generator_delete_nn_relation_item:
+  url:   /net7_advanced_generator_delete_nn_relation_item
+  param: { module: advanced_generator_plugin_utilities, action: deleteNNRelationItem }
+
+net7_advanced_generator_order_relation_items:
+  url:   /net7_advanced_generator_order_relation_items
+  param: { module: advanced_generator_plugin_utilities, action: orderRelationItems }
+  
+net7_advanced_generator_update_main_relation_item_field:
+  url:   /net7_advanced_generator_update_main_relation_item_field
+  param: { module: advanced_generator_plugin_utilities, action: updateMainRelationItemField }
+
+net7_advanced_generator_update_editinline_field:
+  url:   /net7_advanced_generator_update_editinline_field
+  param: { module: advanced_generator_plugin_utilities, action: updateEdinlineField }
+
+net7_advanced_generator_update_editinline_boolean_field:
+  url:   /net7_advanced_generator_update_editinline_boolean_field
+  param: { module: advanced_generator_plugin_utilities, action: updateEditinlineBooleanField }
+  
+  
+net7_advanced_generator_show_color_popup:
+  url:   /net7_advanced_generator_show_color_popup
+  param: { module: advanced_generator_plugin_utilities, action: showColorPopup }
+
+net7_advanced_generator_go_to_page:
+  url:   /net7_advanced_generator_go_to_page
+  param: { module: advanced_generator_plugin_utilities, action: goToPage }
+  
