@@ -9,18 +9,24 @@
  * @property integer $superstar
  * @property string $contest_id
  * @property integer $game_id
+ * @property integer $user_id
  * @property Game $Game
+ * @property sfGuardUser $User
  * 
  * @method string           getNumbersPlayed()  Returns the current record's "numbers_played" value
  * @method integer          getSuperstar()      Returns the current record's "superstar" value
  * @method string           getContestId()      Returns the current record's "contest_id" value
  * @method integer          getGameId()         Returns the current record's "game_id" value
+ * @method integer          getUserId()         Returns the current record's "user_id" value
  * @method Game             getGame()           Returns the current record's "Game" value
+ * @method sfGuardUser      getUser()           Returns the current record's "User" value
  * @method SuperenalottoBet setNumbersPlayed()  Sets the current record's "numbers_played" value
  * @method SuperenalottoBet setSuperstar()      Sets the current record's "superstar" value
  * @method SuperenalottoBet setContestId()      Sets the current record's "contest_id" value
  * @method SuperenalottoBet setGameId()         Sets the current record's "game_id" value
+ * @method SuperenalottoBet setUserId()         Sets the current record's "user_id" value
  * @method SuperenalottoBet setGame()           Sets the current record's "Game" value
+ * @method SuperenalottoBet setUser()           Sets the current record's "User" value
  * 
  * @package    game_notifier
  * @subpackage model
@@ -46,6 +52,9 @@ abstract class BaseSuperenalottoBet extends sfDoctrineRecord
         $this->hasColumn('game_id', 'integer', null, array(
              'type' => 'integer',
              ));
+        $this->hasColumn('user_id', 'integer', null, array(
+             'type' => 'integer',
+             ));
     }
 
     public function setUp()
@@ -53,6 +62,10 @@ abstract class BaseSuperenalottoBet extends sfDoctrineRecord
         parent::setUp();
         $this->hasOne('Game', array(
              'local' => 'game_id',
+             'foreign' => 'id'));
+
+        $this->hasOne('sfGuardUser as User', array(
+             'local' => 'user_id',
              'foreign' => 'id'));
 
         $timestampable0 = new Doctrine_Template_Timestampable();

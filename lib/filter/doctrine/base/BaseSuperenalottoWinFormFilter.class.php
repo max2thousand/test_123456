@@ -17,7 +17,6 @@ abstract class BaseSuperenalottoWinFormFilter extends BaseFormFilterDoctrine
       'contest_id'     => new sfWidgetFormFilterInput(),
       'superstar'      => new sfWidgetFormFilterInput(),
       'game_id'        => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Game'), 'add_empty' => true)),
-      'user_id'        => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('User'), 'add_empty' => true)),
     ));
 
     $this->setValidators(array(
@@ -25,7 +24,6 @@ abstract class BaseSuperenalottoWinFormFilter extends BaseFormFilterDoctrine
       'contest_id'     => new sfValidatorPass(array('required' => false)),
       'superstar'      => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
       'game_id'        => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('Game'), 'column' => 'id')),
-      'user_id'        => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('User'), 'column' => 'id')),
     ));
 
     $this->widgetSchema->setNameFormat('superenalotto_win_filters[%s]');
@@ -50,7 +48,6 @@ abstract class BaseSuperenalottoWinFormFilter extends BaseFormFilterDoctrine
       'contest_id'     => 'Text',
       'superstar'      => 'Number',
       'game_id'        => 'ForeignKey',
-      'user_id'        => 'ForeignKey',
     );
   }
 }

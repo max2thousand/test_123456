@@ -22,7 +22,7 @@
  * @property sfGuardRememberKey $RememberKeys
  * @property sfGuardForgotPassword $ForgotPassword
  * @property SfGuardUserProfile $Profile
- * @property Doctrine_Collection $SuperenalottoWins
+ * @property Doctrine_Collection $SuperenalottoBets
  * @property Doctrine_Collection $UserStatistics
  * 
  * @method string                getFirstName()             Returns the current record's "first_name" value
@@ -42,7 +42,7 @@
  * @method sfGuardRememberKey    getRememberKeys()          Returns the current record's "RememberKeys" value
  * @method sfGuardForgotPassword getForgotPassword()        Returns the current record's "ForgotPassword" value
  * @method SfGuardUserProfile    getProfile()               Returns the current record's "Profile" value
- * @method Doctrine_Collection   getSuperenalottoWins()     Returns the current record's "SuperenalottoWins" collection
+ * @method Doctrine_Collection   getSuperenalottoBets()     Returns the current record's "SuperenalottoBets" collection
  * @method Doctrine_Collection   getUserStatistics()        Returns the current record's "UserStatistics" collection
  * @method sfGuardUser           setFirstName()             Sets the current record's "first_name" value
  * @method sfGuardUser           setLastName()              Sets the current record's "last_name" value
@@ -61,7 +61,7 @@
  * @method sfGuardUser           setRememberKeys()          Sets the current record's "RememberKeys" value
  * @method sfGuardUser           setForgotPassword()        Sets the current record's "ForgotPassword" value
  * @method sfGuardUser           setProfile()               Sets the current record's "Profile" value
- * @method sfGuardUser           setSuperenalottoWins()     Sets the current record's "SuperenalottoWins" collection
+ * @method sfGuardUser           setSuperenalottoBets()     Sets the current record's "SuperenalottoBets" collection
  * @method sfGuardUser           setUserStatistics()        Sets the current record's "UserStatistics" collection
  * 
  * @package    game_notifier
@@ -162,7 +162,7 @@ abstract class BasesfGuardUser extends sfDoctrineRecord
              'local' => 'id',
              'foreign' => 'user_id'));
 
-        $this->hasMany('SuperenalottoWin as SuperenalottoWins', array(
+        $this->hasMany('SuperenalottoBet as SuperenalottoBets', array(
              'local' => 'id',
              'foreign' => 'user_id'));
 

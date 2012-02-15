@@ -65,12 +65,18 @@ SuperenalottoBet:
     superstar: integer
     contest_id: string(255) # identificativo del concorso
     game_id: integer
+    user_id: integer
   relations:
     Game:
       class: Game
       foreign: id
       local: game_id
       foreignAlias: SuperenalottoBets
+    User:
+      class: sfGuardUser
+      local: user_id
+      foreign: id
+      foreignAlias: SuperenalottoBets 
       
       
 SuperenalottoWin:
@@ -79,13 +85,7 @@ SuperenalottoWin:
     contest_id: string(255) # identificativo del concorso
     superstar: integer
     game_id: integer
-    user_id: integer
   relations:
-    User:
-      class: sfGuardUser
-      local: user_id
-      foreign: id
-      foreignAlias: SuperenalottoWins 
     Game:
       class: Game
       foreign: id

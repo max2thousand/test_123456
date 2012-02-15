@@ -20,7 +20,6 @@ abstract class BaseSuperenalottoWinForm extends BaseFormDoctrine
       'contest_id'     => new sfWidgetFormInputText(),
       'superstar'      => new sfWidgetFormInputText(),
       'game_id'        => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Game'), 'add_empty' => true)),
-      'user_id'        => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('User'), 'add_empty' => true)),
     ));
 
     $this->setValidators(array(
@@ -29,7 +28,6 @@ abstract class BaseSuperenalottoWinForm extends BaseFormDoctrine
       'contest_id'     => new sfValidatorString(array('max_length' => 255, 'required' => false)),
       'superstar'      => new sfValidatorInteger(array('required' => false)),
       'game_id'        => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Game'), 'required' => false)),
-      'user_id'        => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('User'), 'required' => false)),
     ));
 
     $this->widgetSchema->setNameFormat('superenalotto_win[%s]');

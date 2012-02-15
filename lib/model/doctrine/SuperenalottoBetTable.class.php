@@ -16,4 +16,6 @@ class SuperenalottoBetTable extends Doctrine_Table
     {
         return Doctrine_Core::getTable('SuperenalottoBet');
     }
+    
+    
 }
