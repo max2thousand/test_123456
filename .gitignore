@@ -2,3 +2,6 @@ log
 cache
 databases.yml
 nbproject
+.buildpath
+.project
+.settings

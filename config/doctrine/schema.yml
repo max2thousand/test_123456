@@ -53,7 +53,7 @@ Game:
       
       
   ###########################
-  ### SUPERENALOTTO BET   ###
+  ### SUPERENALOTTO ###
   ###########################
       
 SuperenalottoBet:
@@ -80,8 +80,10 @@ SuperenalottoBet:
       
       
 SuperenalottoWin:
+  actAs:
+    Timestampable: ~
   columns:
-    numbers_played: string(255)
+    numbers_extracted: string(255)
     contest_id: string(255) # identificativo del concorso
     superstar: integer
     game_id: integer
@@ -91,8 +93,52 @@ SuperenalottoWin:
       foreign: id
       local: game_id
       foreignAlias: SuperenalottoWins
-      
+    WinningUsers:
+      local: superenalotto_win_id
+      class: sfGuardUser
+      foreign: user_id 
+      refClass: SuperenalottoWinUser
+      foreignAlias: SuperenalottoWins
+
+SuperenalottoWinUser:
+  actAs:
+    Timestampable: ~
+  columns:
+    user_id: integer
+    superenalotto_win_id: integer
+    
+  relations:
+    SuperenalottoWin:
+      class: SuperenalottoWin
+      foreign: id
+      local: superenalotto_win_id
+      foreignAlias: Wins
+      onDelete: cascade
+    User:
+      class: sfGuardUser
+      local: user_id
+      foreign: id
+      foreignAlias: Wins 
+      # qui nessun ondelete...teniamo i dati anche se l'utente viene eliminato
   
+  
+#############################
+######  LOGS  ###############
+#############################
+
+ActionLog:
+  actAs:
+    Timestampable: ~
+  columns:
+    user_id:  integer
+    username: string(255) 
+    action:  string(60)
+    ip:      string(60)
+    browser: string(255)
+    session_id: string(255)
+    app_type: string(60)
+    name: string(255)
+    surname: string(255)
 
 
 ################################
