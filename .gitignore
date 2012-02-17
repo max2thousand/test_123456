@@ -5,3 +5,6 @@ nbproject
 .buildpath
 .project
 .settings
+lib/form/doctrine/base
+lib/model/doctrine/base
+lib/filter/doctrine/base

@@ -1,7 +1,10 @@
 ### SUPERENALOTTO CARD ROUTES ###
 superenalotto_card:
-  url:   /superenalotto_card
+  url:   superenalottoCard/gameId/:gameId/contestId/:contestId
   param: { module: superenalotto_card, action: showSuperenalottoCard }
+  requirements:
+    gameId: \d+
+    contestId: \d+
 check_save_card:
   url:   /check_save_card
   param: { module: superenalotto_card, action: checkSaveCard }

@@ -461,3 +461,13 @@ a
 {
     color: #9D2E2C;
 }
+
+.overlay{
+    background:transparent url(images/overlay.png) repeat top left;
+    position:fixed;
+    top:0px;
+    bottom:0px;
+    left:0px;
+    right:0px;
+    z-index:999;
+}
