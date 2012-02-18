@@ -6,6 +6,9 @@ all:
   sf_guard_plugin:
     success_signin_url:     '@homepage'
     success_signout_url:    '@homepage'
+  superenalotto_home: 'http://giochinumerici.sisal.it/portal/page/portal/SitoGioco_DocLib/Contenuti/BoxInformativo/UltimoConcorso?numeroconto='
+  superenalotto_home_divs: '#infoVinc_boxNum1,#infoVinc_boxNum2,#infoVinc_boxNum3,#infoVinc_boxNum4,#infoVinc_boxNum5,#infoVinc_boxNum6,#infoVinc_boxJolly,#infoVinc_boxSuperStar,#infoVinc_boxTitolo'
+  superenalotto_history_base_url: 'http://giochinumerici.sisal.it/portal/page/portal/SitoGioco_DocLib/Contenuti/BoxInformativo'
   sf_admin_dash:
     web_dir: /sfAdminDashPlugin
     image_dir: /sfAdminDashPlugin/images/icons/
