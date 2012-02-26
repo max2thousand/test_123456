@@ -8,3 +8,9 @@ superenalotto_card:
 check_save_card:
   url:   /check_save_card
   param: { module: superenalotto_card, action: checkSaveCard }
+
+  
+homepage:
+  url:   /
+  param: { module: main, action: index }
+  
